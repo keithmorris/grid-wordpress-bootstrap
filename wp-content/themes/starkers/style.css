@@ -8,6 +8,4 @@ Author URI: http://elliotjaystocks.com
 Tags: starkers, naked, clean, basic
 */
 
-@import "css/reset.css";
-@import "css/typography.css";
-@import "css/layout.css";
+@import "assets/stylesheets/compiled.css?v=2";

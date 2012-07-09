@@ -2,33 +2,49 @@
 // ========================================================
 
 .percent(@percent){
-	width: ~"@{percent}%";
+  width: ~"@{percent}%";
 }
 
-.dimensions(@col, @margin-left: @fluidGridGutterWidth, @min-width: auto, @max-width:auto) {
-	#fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, @col);
-    float: left;
-    margin-left: @margin-left;
-    min-width: @min-width;
-    max-width: @max-width;
+.sprite-attrbutes {
+  display: block;
+  border: none;
+  background-color: none;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
 }
 
-.cols(@col) {
-	#fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, @col);
-    margin-left: @fluidGridGutterWidth;
+#sprite {
+  .icon(@w,@h,@x,@y) {
+    .sprite-attrbutes;
+    background-image: url('../images/icon-sprite.png');
+    background-position: ~"@{x}px" ~"@{y}px";
+    width: ~"@{w}px";
+    height: ~"@{h}px";
+
+  } 
 }
+
+
+.dimensions (@columns) {
+  width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
+  *width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
+  display: block;
+  float: left;
+  margin-left: @fluidGridGutterWidth;
+}
+
+.accent-color(@color){
+  &:hover,
+  &.current {
+    color: @color;
+  }
+}
+
 
 .first-child { margin-left: 0;  }
 .last-child  { margin-right: 0; }
 
 .row-fluid {
-	width: 100%;
+  width: 100%;
     .clearfix();
-}
-
-.flexicol(@pct, @xMargin:0, @yMargin:0) {
-	width: ~"@{pct}%";
-	display: block;
-	float: left;
-	margin: ~"@{xMargin}%" ~"@{yMargin}%";
 }

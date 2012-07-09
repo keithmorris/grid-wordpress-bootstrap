@@ -1,0 +1,1 @@
+(function(e){e(document).ready(function(){alert("jquery is firing!")})})(jQuery);

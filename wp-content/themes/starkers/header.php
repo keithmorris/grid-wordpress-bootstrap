@@ -12,11 +12,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?= wp_title( '|', true, 'right' ); ?>
-
-	?></title>
+<title><?= wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" rel="stylesheet/less" href="<?php bloginfo( 'template_directory' ); ?>/css/screen.less" />
 <script type="text/javascript" src="<?=bloginfo('template_directory');?>/javascript/less-1.1.3.min.js"></script>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
