@@ -1,0 +1,34 @@
+// Custom Mixins
+// ========================================================
+
+.percent(@percent){
+	width: ~"@{percent}%";
+}
+
+.dimensions(@col, @margin-left: @fluidGridGutterWidth, @min-width: auto, @max-width:auto) {
+	#fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, @col);
+    float: left;
+    margin-left: @margin-left;
+    min-width: @min-width;
+    max-width: @max-width;
+}
+
+.cols(@col) {
+	#fluidGridSystem > .columns(@fluidGridGutterWidth, @fluidGridColumnWidth, @col);
+    margin-left: @fluidGridGutterWidth;
+}
+
+.first-child { margin-left: 0;  }
+.last-child  { margin-right: 0; }
+
+.row-fluid {
+	width: 100%;
+    .clearfix();
+}
+
+.flexicol(@pct, @xMargin:0, @yMargin:0) {
+	width: ~"@{pct}%";
+	display: block;
+	float: left;
+	margin: ~"@{xMargin}%" ~"@{yMargin}%";
+}
